@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacte-nos - Descobrir Lousada</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Barra de navegação fixa com logo -->
+    <div class="fixed-nav">
+        <img src="../Imagens/dclogo.png" alt="Logo de Lousada" class="nav-logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="locais.html">Locais</a></li>
+                <li><a href="sobre-nos.html">Sobre Nós</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Secção de contacto -->
+    <section class="hero-section">
+        <h1>Contacte-nos</h1>
+    </section>
+
+    <section class="contact-content">
+        <h2>Entre em Contato Connosco</h2>
+        <p>Se tiver alguma dúvida, sugestão ou interesse em colaborar, entre em contacto com a nossa equipa através do formulário abaixo ou pelos contactos indicados.</p>
+
+        <!-- Informações de contacto -->
+        <div class="contact-info">
+            <p>Email: <a href="mailto:descobrirlousada@gmail.com">descobrirlousada@gmail.com</a></p>
+            <p>Telefone: (+351) 912 345 678</p>
+        </div>
+
+        <!-- Formulário de contacto -->
+        <form action="mailto:descobrirlousada@gmail.com" method="post" enctype="text/plain">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+</body>
+</html>

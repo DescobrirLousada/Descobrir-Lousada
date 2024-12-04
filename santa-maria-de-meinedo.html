@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igreja de São Lourenço de Pias</title>
+    <link rel="stylesheet" href="igrejapias.css">
+</head>
+<body>
+ <!-- Barra de navegação fixa com logo -->
+    <div class="fixed-nav">
+        <img src="../Imagens/dclogo.png" alt="Logo de Lousada" class="nav-logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="locais.html">Locais</a></li>
+                <li><a href="sobre-nos.html">Sobre Nós</a></li>
+                <li><a href="contacte-nos.html">Contacte-nos</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <header>
+        <h1>Igreja de São Lourenço de Pias</h1>
+    </header>
+
+    <section class="video-gallery">
+        <h2>Vídeo Informativo</h2>
+      <video controls class="animate-on-scroll">
+        <source src="../Video/video-sao-lourenco.mp4" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
+    </video>
+        <h2>Galeria de Imagens</h2>
+        <div class="image-gallery">
+            <img src="../Imagens/rui.jpg" alt="Imagem 1 da Igreja de São Lourenço">
+            <img src="../calvo.jpg" alt="Imagem 2 da Igreja de São Lourenço">
+            <!-- Adicione mais imagens conforme necessário -->
+        </div>
+        
+        <!-- Botão para voltar à página inicial -->
+        <button onclick="voltarParaPaginaInicial()">Voltar para a Página Inicial</button>
+    </section>
+
+    <script>
+        function voltarParaPaginaInicial() {
+            window.location.href = "index.html";
+        }
+    </script>
+	
+
+	<script src="animacoes.js"></script>
+</body>
+</html>

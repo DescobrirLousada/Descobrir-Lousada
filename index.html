@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descobrir Lousada</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Barra de navegação fixa e completa -->
+<header class="navbar">
+    <div class="nav-logo">
+        <img src="../Imagens/dclogo.png" alt="Logo Descobrir Lousada">
+    </div>
+    <!-- Menu de navegação, oculto por padrão no mobile -->
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="locais.html">Locais</a></li>
+            <li><a href="sobre-nos.html">Sobre Nós</a></li>
+            <li><a href="contacte-nos.html">Contacte-nos</a></li>
+        </ul>
+    </nav>
+    <!-- Botão hambúrguer, aparece no mobile -->
+    <button class="hamburger-menu" aria-label="Abrir menu">
+        &#9776; <!-- Ícone do botão hambúrguer -->
+    </button>
+</header>
+
+
+<!-- Secção de destaque com imagem de fundo -->
+    <section class="hero-section">
+        <div class="hero-text">
+            <h1>Venha Descobrir Lousada</h1>
+            <p>Explore o património histórico, as paisagens deslumbrantes e a riqueza cultural deste concelho único.</p>
+        </div>
+    </section>
+
+
+   <!-- Secção sobre o projeto -->
+<section class="sobre-projeto">
+    <div class="sobre-container">
+        <div class="sobre-texto">
+            <h2>Descobrir Lousada</h2>
+            <p>
+                O projeto <strong>“Descobrir Lousada”</strong> é uma iniciativa inovadora que celebra o património histórico, cultural e natural do concelho de Lousada. Com foco em documentação e partilha, este projeto combina elementos de história, arquitetura e tradições locais para criar uma experiência imersiva e educativa.
+            </p>
+            <p>
+                Através de vídeos informativos, galerias de imagens e narrações envolventes, exploramos os monumentos mais icônicos de Lousada, desde igrejas históricas a pontes seculares. Este é um convite para mergulhar na riqueza cultural e descobrir os tesouros escondidos que tornam este lugar único.
+            </p>
+            <p>
+                Seja um explorador do passado e do presente, e junte-se a nós nesta jornada de descoberta. O projeto também é uma homenagem ao compromisso da comunidade local em preservar e valorizar suas raízes culturais para as futuras gerações.
+            </p>
+        </div>
+        <div class="sobre-imagem">
+            <img src="../Imagens/dclogo.png" alt="Imagem representativa do projeto Descobrir Lousada">
+        </div>
+    </div>
+</section>
+
+
+    <!-- Secção de slideshow com links -->
+<section class="slideshow">
+    <h1 class="slideshow-title"><strong>Descubra mais sobre esta região</strong></h1>
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <a href="torre-de-vilar.html">
+                    <img src="../Imagens/Torre de Vilar 2.jpg" alt="Torre de Vilar">
+                </a>
+                <a href="ponte-de-vilela.html">
+                    <img src="../Imagens/Ponte de Vilela 1.jpg" alt="Ponte de Vilela">
+                </a>
+                <a href="igreja-de-meinedo.html">
+                    <img src="../Imagens/Igreja de Meinedo 1.jpg" alt="Igreja de Meinedo">
+                </a>
+            </div>
+            <div class="slide">
+                <a href="igreja-de-meinedo.html">
+                    <img src="../Imagens/Igreja de Meinedo 2.jpg" alt="Igreja de Meinedo">
+                </a>
+                <a href="igreja-de-boim.html">
+                    <img src="../Imagens/Igreja de Boim.jpg" alt="Igreja de Boim">
+                </a>
+                <a href="igreja-de-meinedo.html">
+                    <img src="../Imagens/Igreja de Meinedo 1.jpg" alt="Igreja de Meinedo">
+                </a>
+            </div>
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+</section>
+
+
+<!-- Secção de locais -->
+<section id="locais" class="locais">
+    <div class="local-header">
+        <h2>Locais a Visitar</h2>
+    </div>
+    <div class="local-slider">
+        <div class="local-grid">
+            <div class="local-card">
+                <a href="torre-de-vilar.html">
+                    <img src="../Imagens/Torre de Vilar 2.jpg" alt="Torre de Vilar">
+                    <h3>Torre de Vilar</h3>
+                    <p>Descubra a história deste monumento histórico.</p>
+                </a>
+            </div>
+            <div class="local-card">
+                <a href="ponte-de-vilela.html">
+                    <img src="../Imagens/Ponte de Vilela 1.jpg" alt="Ponte de Vilela">
+                    <h3>Ponte de Vilela</h3>
+                    <p>Explore a rica história da ponte de Vilela.</p>
+                </a>
+            </div>
+            <div class="local-card">
+                <a href="igreja-de-meinedo.html">
+                    <img src="../Imagens/Igreja de Meinedo 1.jpg" alt="Igreja de Meinedo">
+                    <h3>Igreja de Meinedo</h3>
+                    <p>Conheça mais sobre esta maravilhosa igreja.</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+ <!-- Blog -->
+    </section>
+<section class="blog-section">
+    <h2>Últimos Artigos do Blog</h2>
+    <div class="blog-container">
+        <!-- Aqui será carregado o feed do Blogspot -->
+        <iframe src="https://descobrirlousada.blogspot.com" class="blog-iframe" frameborder="0"></iframe>
+    </div>
+</section>
+
+ <!-- Rodapé -->
+	<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-about">
+            <img src="../Imagens/dclogo.png" alt="Logotipo Descobrir Lousada" class="footer-logo">
+            <h3>Descobrir Lousada</h3>
+            <p>Uma jornada fascinante pelo património histórico, cultural e natural de Lousada. Explore os segredos e histórias que definem este incrível concelho.</p>
+        </div>
+
+        <div class="footer-links">
+            <h4>Links Rápidos</h4>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="locais.html">Locais</a></li>
+                <li><a href="sobre-nos.html">Sobre Nós</a></li>
+                <li><a href="contacte-nos.html">Contacte-nos</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-contact">
+            <h4>Contacte-nos</h4>
+            <p>Email: <a href="mailto:descobrirlousada@gmail.com">descobrirlousada@gmail.com</a></p>
+            <p>Telefone: <a href="tel:+351123456789">+351 123 456 789</a></p>
+            <p>Morada: Rua dos Monumentos, Lousada</p>
+        </div>
+
+        <div class="footer-social">
+            <h4>Siga-nos</h4>
+            <a href="https://facebook.com" target="_blank"><img src="../Imagens/facebook-icon.png" alt="Facebook"></a>
+            <a href="https://instagram.com" target="_blank"><img src="../Imagens/instagram-icon.png" alt="Instagram"></a>
+            <a href="https://twitter.com" target="_blank"><img src="../Imagens/twitter-icon.png" alt="Twitter"></a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 Descobrir Lousada. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

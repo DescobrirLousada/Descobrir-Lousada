@@ -1,0 +1,84 @@
+/* Reseta estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tela inicial com imagem de fundo */
+.hero-section {
+    background-image: url('fundo.jpg'); /* Substitua 'fundo.jpg' pela imagem de fundo desejada */
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: green;
+    font-size: 3rem;
+    text-align: center;
+}
+
+nav {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: green;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Secção de fotos a rodar */
+.slideshow {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    animation: slide 10s infinite;
+}
+
+.slide {
+    min-width: 100%;
+    transition: 0.5s;
+    background-size: cover;
+    height: 300px;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-100%); }
+    66% { transform: translateX(-200%); }
+    100% { transform: translateX(0); }
+}
+
+/* Secções do conteúdo */
+section {
+    padding: 50px;
+    text-align: center;
+}
+
+.local-card {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+}
+
+/* Estilo de contato */
+#contacte-nos a {
+    color: green;
+    font-weight: bold;
+}

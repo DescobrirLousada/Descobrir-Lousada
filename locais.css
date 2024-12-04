@@ -1,0 +1,649 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo global */
+body {
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    margin-top: 0; /* Remover margem no body */
+}
+
+
+/* Barra de navegação */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2f4f2f;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    height: 80px; /* Tamanho para desktop */
+}
+
+/* Logo */
+.nav-logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/* Menu de navegação */
+.nav-menu {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu ul li {
+    margin: 0 15px;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-menu ul li a:hover {
+    color: #ffdd57; /* Destaque amarelo */
+}
+
+/* Estilo do botão hambúrguer */
+.hamburger-menu {
+    display: none; /* Oculta no desktop */
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 10px; /* Mover o botão mais para cima */
+    right: 200px;
+    z-index: 1001;
+    transition: transform 0.3s ease-in-out; /* Adicionando a animação */
+}
+
+/* Animação do botão hambúrguer */
+.hamburger-menu.open {
+    transform: rotate(90deg); /* Rota o botão ao ser clicado */
+}
+
+/* Ajustes para o mobile */
+@media screen and (max-width: 768px) {
+    body {
+        margin-top: 60px; /* Ajusta a margem superior no mobile */
+    }
+
+    .navbar {
+        padding: 5px 15px; /* Diminui o padding para não ocupar muito espaço */
+        height: 60px; /* Ajusta a altura da barra para o mobile */
+    }
+
+    /* Exibir o botão hambúrguer no mobile */
+    .hamburger-menu {
+        display: block; /* Mostrar no mobile */
+        position: absolute;
+        top: 15px; /* Posiciona o botão mais para cima */
+        right: 15px; /* Coloca o botão no canto direito */
+    }
+
+    /* Menu de navegação */
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Mover o menu para baixo, para não sobrepor */
+        right: 0;
+        width: 100%;
+        background-color: #2f4f2f;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transform: translateY(-100%); /* Inicialmente fora da tela */
+        transition: transform 0.5s ease-in-out;
+    }
+
+    /* Mostrar o menu quando estiver aberto */
+    .nav-menu.open {
+        display: flex;
+        transform: translateY(0); /* Coloca o menu dentro da tela */
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .nav-menu ul li {
+        margin: 10px 0;
+    }
+
+    .nav-menu ul li a {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* Imagem de fundo da seção */
+.hero-locais {
+    background-image: url('../Imagens/hero-locais.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-locais h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero-locais p {
+    font-size: 1.2rem;
+}
+
+/* Texto introdutório da seção de locais */
+.intro-text {
+    text-align: center;
+    margin: 40px 20px;
+}
+
+.intro-text h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: 2.5rem;
+    color: #2f4f2f;
+    margin-bottom: 20px;
+}
+
+.intro-text p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Estilos para os cards de locais */
+.local-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adaptável ao tamanho da tela */
+    gap: 20px;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.local-card {
+    background-color: #fff;
+    border-radius: 12px;  /* Bordas mais arredondadas */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave para destaque */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;  /* Suavização da transformação */
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+/* Efeito de hover mais dinâmico */
+.local-card:hover {
+    transform: translateY(-10px); /* Levanta o card suavemente */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra mais forte ao passar o mouse */
+}/* Imagem do card */
+.local-card img {
+    width: 100%; /* Faz com que a imagem ocupe toda a largura do card */
+    height: 200px;  /* Altura fixa para manter a proporção */
+    object-fit: cover;  /* Cobre o espaço sem distorcer a imagem */
+    border-radius: 12px 12px 0 0;  /* Bordas arredondadas somente no topo */
+}/* Título do card */
+.local-card h3 {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.5rem;
+    color: #2f4f2f;
+    margin: 15px 0;
+    text-transform: uppercase;
+}
+/* Link de navegação */
+.local-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* Ajustes para o mobile */
+@media screen and (max-width: 768px) {
+    .local-card img {
+        height: auto; /* No mobile, a altura da imagem será adaptada automaticamente */
+    }
+
+    .local-card h3 {
+        font-size: 1.2rem; /* Reduz o tamanho da fonte do título para o mobile */
+    }
+}
+/* Botões */
+.btn {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #2f4f2f;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #388e3c;
+}
+
+/* Imagem de fundo da seção de locais */
+.hero-locais {
+    background-image: url('../Imagens/Ponte de Vilela 1.jpg'); /* Imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    height: 400px; /* Altura da seção */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.hero-text {
+    position: absolute;
+    text-align: center;
+    color: white;
+}
+
+.hero-text h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+
+
+/* Imagem de fundo da seção hero-locais */
+.hero-locais {
+    background-image: url('../Imagens/Torre de Vilar 2.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px; /* Tamanho adequado para a imagem de fundo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+}
+
+
+/* Estilo para a seção de eventos */
+.eventos {
+    background-color: #f4f4f4;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.eventos h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: 2.5rem;
+    color: #2f4f2f;
+    margin-bottom: 30px;
+}
+
+.eventos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adaptável ao tamanho da tela */
+    gap: 20px;
+    padding: 20px;
+}
+
+.evento-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    text-align: left;
+}
+
+.evento-card:hover {
+    transform: translateY(-10px); /* Levanta o card suavemente */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra mais forte ao passar o mouse */
+}
+
+.evento-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Garante que a imagem cubra o espaço do card sem distorcer */
+    border-radius: 10px 10px 0 0;
+}
+
+.evento-info {
+    padding: 15px;
+}
+
+.evento-info h3 {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.6rem;
+    color: #2f4f2f;
+    margin-bottom: 10px;
+}
+
+.evento-info p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.evento-info span {
+    font-size: 1.1rem;
+    color: #388e3c;
+}
+
+/* Ajustes para o mobile */
+@media screen and (max-width: 768px) {
+    .evento-card {
+        width: 100%; /* Cada card ocupa toda a largura no mobile */
+    }
+
+    .evento-info h3 {
+        font-size: 1.2rem; /* Reduz o tamanho da fonte do título */
+    }
+
+    .evento-info p {
+        font-size: 1rem; /* Ajuste do tamanho do texto */
+    }
+}
+
+
+
+/* Rodapé */
+.footer {
+    background-color: #2f4f2f;
+    color: #fff;
+    padding: 40px 20px;
+    font-size: 0.9rem;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-about, .footer-links, .footer-contact, .footer-social {
+    flex: 1 1 200px;
+    min-width: 200px;
+}
+
+.footer-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer h3, .footer h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.footer p, .footer a {
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.6;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #ffdd57;
+}
+
+/* Barra de navegação responsiva */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .navbar nav ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .navbar nav ul li {
+        text-align: left;
+        margin: 5px 0;
+    }
+}
+
+ @media (max-width: 768px) {
+    .hero-section {
+        height: 50vh;
+        padding: 20px;
+    }
+
+    .hero-text h
+/* Rodapé */
+.footer {
+    background-color: #2f4f2f; /* Verde escuro */
+    color: #fff;
+    padding: 40px 20px;
+    font-size: 0.9rem;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-about, .footer-links, .footer-contact, .footer-social {
+    flex: 1 1 200px;
+    min-width: 200px;
+}
+
+.footer-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 50%; /* Torna a imagem circular */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra */
+}
+
+.footer h3, .footer h4 {
+    font-family: 'Bebas Neue', sans-serif; /* Título em Bebas Neue */
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.footer p, .footer a {
+    font-family: 'Cormorant Garamond', serif; /* Texto normal */
+    line-height: 1.6;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #ffdd57; /* Destaque amarelo */
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin: 5px 0;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #ffdd57; /* Destaque amarelo */
+}
+
+.footer-social a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.footer-social img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.footer-social img:hover {
+    transform: scale(1.2);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    font-size: 0.8rem;
+}
+ 
+
+/* Barra de navegação responsiva */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .navbar nav ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .navbar nav ul li {
+        text-align: left;
+        margin: 5px 0;
+    }
+}
+
+ @media (max-width: 768px) {
+    .hero-section {
+        height: 50vh; /* Reduz o tamanho da hero section */
+        padding: 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+}
+@media (max-width: 768px) {
+    .sobre-projeto {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .sobre-texto, .sobre-imagem {
+        max-width: 100%; /* Ocupa a largura total */
+        padding: 10px 0;
+    }
+
+    #locais {
+        background-size: cover;
+        padding: 20px;
+    }
+
+    .local-card {
+        width: 100%; /* Cada card ocupa toda a largura no mobile */
+        margin-bottom: 20px;
+    }
+
+    .local-card img {
+        height: auto; /* Ajusta a altura automaticamente */
+    }
+}
+
+@media (max-width: 768px) {
+    .slide img {
+        max-height: 200px; /* Reduz a altura máxima das imagens */
+    }
+
+    .slide {
+        gap: 10px; /* Menor espaçamento entre as imagens */
+    }
+
+    button.prev, button.next {
+        padding: 10px; /* Botões menores */
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-logo {
+        margin: 0 auto; /* Centraliza no mobile */
+    }
+
+    .footer p, .footer a {
+        text-align: center;
+    }
+}
+

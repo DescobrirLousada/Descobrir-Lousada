@@ -1,0 +1,132 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Barra de navegação */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2f4f2f;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    height: 80px; /* Tamanho para desktop */
+}
+
+/* Logo */
+.nav-logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/* Menu de navegação */
+.nav-menu {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu ul li {
+    margin: 0 15px;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-menu ul li a:hover {
+    color: #ffdd57; /* Destaque amarelo */
+}
+
+/* Estilo do botão hambúrguer */
+.hamburger-menu {
+    display: none; /* Oculta no desktop */
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 10px; /* Mover o botão mais para cima */
+    right: 20px;
+    z-index: 1001;
+    transition: transform 0.3s ease-in-out; /* Adicionando a animação */
+}
+
+/* Animação do botão hambúrguer */
+.hamburger-menu.open {
+    transform: rotate(90deg); /* Rota o botão ao ser clicado */
+}
+
+/* Estilo da imagem do logo */
+.nav-logo img {
+    width: 45px; /* Tamanho reduzido do logo */
+    height: 45px; /* Tamanho reduzido do logo */
+    border-radius: 50%;
+    margin-top: -2px; /* Ajusta o logo para mais para cima */
+}
+
+/* Ajustes para o mobile */
+@media screen and (max-width: 768px) {
+    body {
+        margin-top: 60px; /* Ajusta a margem superior no mobile */
+    }
+
+    .navbar {
+        padding: 5px 20px; /* Ajusta o padding para o mobile */
+        height: 60px; /* Ajusta a altura da barra para o mobile */
+    }
+
+    /* Exibir o botão hambúrguer no mobile */
+    .hamburger-menu {
+        display: block; /* Mostrar no mobile */
+    }
+
+    /* Menu de navegação */
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Mover o menu para baixo, para não sobrepor */
+        right: 0;
+        width: 100%;
+        background-color: #2f4f2f;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transform: translateY(-100%); /* Inicialmente fora da tela */
+        transition: transform 0.5s ease-in-out;
+    }
+
+    /* Mostrar o menu quando estiver aberto */
+    .nav-menu.open {
+        display: flex;
+        transform: translateY(0); /* Coloca o menu dentro da tela */
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .nav-menu ul li {
+        margin: 10px 0;
+    }
+
+    .nav-menu ul li a {
+        font-size: 1.2rem;
+    }
+}
